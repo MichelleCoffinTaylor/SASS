@@ -1,0 +1,32 @@
+$size: 150px;
+
+// Main Containers
+
+.container {
+	width: 100%;
+}
+.left-container {
+	width: 70%;
+}
+.right-container {
+	width: 30%;
+}
+
+//Positioning
+
+.float-left {
+	float: left;
+}
+
+// Blog sizing
+
+@mixin blog-size{
+	width: $size;
+	height: $size;
+	float: left;
+}
+
+.image{
+	width: 150px;
+	height: 150px;
+}

@@ -1,0 +1,57 @@
+$size : 150px;
+$primary-color : #3bbfce;
+
+body {
+	margin: 10px;
+	padding: 10px;
+}
+@mixin box-size{
+	width: $size;
+	height: $size;
+	float: left;
+}
+.box {
+	@include box-size;
+	background-color: $primary-color;
+}
+.box2 {
+	@include box-size;
+	background-color: complement($primary-color);
+	p {
+		color: white;
+		a {
+			color: $primary-color;
+		}
+	}
+}
+.box3 {
+	@include box-size;
+	background-color: darken($primary-color, 10%);
+	p {
+		color: orange;
+	}
+}
+.box4 {
+	@include box-size;
+	background-color: lighten(blue, 10%);
+}
+.box5 {
+	width: $size;
+	height: $size * 2;
+	background-color: complement($primary-color);
+}
+p {
+	color: black;
+}
+
+// Example
+
+$squareCount: 3;
+@for $i from 1 through $squareCount{
+	#square-#{$i}{
+		float: left;
+		background-color: red;
+		width: 50px * $i;
+		height: 120px / $i;
+	}
+}
